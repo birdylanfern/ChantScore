@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --font-display: "Cinzel", Georgia, serif;
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #1D1915;
+    background-color: #E8E0D0;
+  }
+
+  /* Subtle archival scrollbars */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #E5DCCB;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #C2B6A1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9E917B;
+  }
+}
+
+/* Subtle parchment fiber vignette for the ivory missal folio */
+.missal-folio {
+  background-color: #FAF6EE;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(255, 253, 248, 0.85) 0%, transparent 72%),
+    radial-gradient(ellipse at 50% 100%, rgba(214, 200, 175, 0.2) 0%, transparent 65%);
+}
+
+/* Studio desk surface behind the ivory missal page */
+.studio-desk {
+  background-color: #E6DDD0;
+  background-image: radial-gradient(circle at 50% 35%, rgba(250, 246, 238, 0.35) 0%, transparent 75%);
+}
+
+@media print {
+  body {
+    background: #FFFFFF !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-page-wrapper {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    break-after: page;
+    page-break-after: always;
+  }
+  .print-page-wrapper:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .print-folio {
+    box-shadow: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Chantscore",
+  "description": "Gregorian chant notation studio and organ player with drag-and-drop neume editing, GABC import, and GABC, PNG, PDF, and MP3 export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
